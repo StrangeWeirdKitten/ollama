@@ -684,7 +684,7 @@ type CompletionResponse struct {
 func (s *llmServer) Completion(ctx context.Context, req CompletionRequest, fn func(CompletionResponse)) error {
 	request := map[string]any{
 		"prompt":            req.Prompt,
-		"stream":            true,
+		"stream":            false,
 		"n_predict":         req.Options.NumPredict,
 		"n_keep":            req.Options.NumKeep,
 		"main_gpu":          req.Options.MainGPU,
